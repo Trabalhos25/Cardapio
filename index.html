@@ -1,126 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Cardápio - Faça seu pedido</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Cardápio - Faça seu pedido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #3b1f14, #1a0d08);
+            color: white;
+        }
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to bottom, #3b1f14, #1a0d08);
-    color: white;
-}
+        header {
+            background: black;
+            padding: 20px;
+            text-align: center;
+        }
 
-header {
-    background: black;
-    padding: 20px;
-    text-align: center;
-}
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-header h1 {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-}
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
+        .card {
+            background: #c7741c;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
 
-.card {
-    background: #c7741c;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    margin-bottom: 20px;
-    gap: 20px;
-}
+        .card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-.card img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+        .info {
+            flex: 1;
+        }
 
-.info {
-    flex: 1;
-}
+        .info h3 {
+            margin: 0 0 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-.info h3 {
-    margin: 0 0 8px;
-    font-family: 'Montserrat', sans-serif;
-}
+        .info ul {
+            margin: 0;
+            padding-left: 18px;
+        }
 
-.info ul {
-    margin: 0;
-    padding-left: 18px;
-}
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-.price {
-    font-size: 22px;
-    font-weight: bold;
-}
+        button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
 
-button {
-    background: black;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 15px;
-}
+        button:hover {
+            background: #222;
+            transform: scale(1.05);
+        }
 
-button:hover {
-    background: #222;
-}
+        .pedido {
+            background: #111;
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 30px;
+            border: 1px solid #c7741c;
+        }
 
-.pedido {
-    background: #111;
-    padding: 20px;
-    border-radius: 16px;
-    margin-top: 30px;
-}
+        .pedido h2 {
+            margin-top: 0;
+        }
 
-.pedido h2 {
-    margin-top: 0;
-}
+        .item-carrinho {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 4px;
+        }
 
-.item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-}
-</style>
+        select {
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .btn-enviar {
+            background: #28a745;
+            width: 100%;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
-    
 
 <header>
     <h1>🍔 Peça agora</h1>
-    <p>(12) 3456-7890</p>
+    <p>Atendimento Imediato</p>
 </header>
 
 <div class="container">
 
-    <!-- ITEM 1 -->
     <div class="card">
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Hambúrguer">
         <div class="info">
             <h3>Tradicional Carne Duplo</h3>
             <ul>
                 <li>2 hambúrgueres 180g</li>
-                <li>Queijo</li>
-                <li>Salada</li>
-                <li>Molho vermelho ou verde</li>
+                <li>Queijo e Salada</li>
             </ul>
         </div>
         <div>
@@ -129,16 +145,13 @@ button:hover {
         </div>
     </div>
 
-    <!-- ITEM 2 -->
     <div class="card">
-        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Hambúrguer">
         <div class="info">
             <h3>Tradicional Carne</h3>
             <ul>
                 <li>Hambúrguer 180g</li>
-                <li>Queijo</li>
-                <li>Salada</li>
-                <li>Molho vermelho ou verde</li>
+                <li>Molho Especial</li>
             </ul>
         </div>
         <div>
@@ -147,112 +160,107 @@ button:hover {
         </div>
     </div>
 
-    <!-- ITEM 3 -->
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d" alt="">
-        <div class="info">
-            <h3>Tradicional Bacon</h3>
-            <ul>
-                <li>Hambúrguer 180g</li>
-                <li>Queijo</li>
-                <li>Bacon</li>
-                <li>Molho</li>
-            </ul>
-        </div>
-        <div>
-            <div class="price">R$ 25,00</div>
-            <button onclick="addPedido('Tradicional Bacon', 25)">Adicionar</button>
-        </div>
-    </div>
-
-    <!-- PEDIDO -->
     <div class="pedido">
         <h2>🧾 Seu pedido</h2>
         <div id="lista"></div>
         <hr>
-        <strong>Total: R$ <span id="total">0</span></strong>
+        <div style="display: flex; justify-content: space-between; font-size: 20px;">
+            <strong>Total:</strong>
+            <strong>R$ <span id="total">0.00</span></strong>
+        </div>
     </div>
-    <hr>
 
-<h3>Escolha a mesa</h3>
-<select id="mesa">
-    <option value="">Selecione</option>
-    <option value="1">Mesa 1</option>
-    <option value="2">Mesa 2</option>
-    <option value="3">Mesa 3</option>
-</select>
+    <h3>Escolha sua Mesa</h3>
+    <select id="mesa">
+        <option value="">-- Selecione --</option>
+        <option value="1">Mesa 1</option>
+        <option value="2">Mesa 2</option>
+        <option value="3">Mesa 3</option>
+    </select>
 
-<br><br>
-
-<button onclick="enviarPedido()">📤 Enviar Pedido</button>
-
-
+    <button class="btn-enviar" onclick="enviarPedido()">📤 ENVIAR PEDIDO</button>
 
 </div>
 
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-
-<script>
-let pedido = [];
-let total = 0;
-
-function atualizarLista() {
-    const lista = document.getElementById("lista");
-    lista.innerHTML = "";
-
-    pedido.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "item";
-        div.innerHTML = `<span>${item.nome}</span><span>R$ ${item.preco}</span>`;
-        lista.appendChild(div);
-    });
-
-    document.getElementById("total").textContent = total.toFixed(2);
-}
-
-function addPedido(nome, preco) {
-    pedido.push({ nome, preco });
-    total += preco;
-    atualizarLista();
-}
-
-function enviarPedido() {
-    const mesa = document.getElementById("mesa").value;
-
-    if (!mesa) {
-        alert("Escolha uma mesa!");
-        return;
-    }
-
-    if (pedido.length === 0) {
-        alert("Nenhum item no pedido!");
-        return;
-    }
-
-    const mesas = JSON.parse(localStorage.getItem("mesas")) || {
-        mesa1: [],
-        mesa2: [],
-        mesa3: []
+    const firebaseConfig = {
+        apiKey: "AIzaSyAQy_vxGowwbjptqbGVYp_-_wa1eUYKvxE",
+        authDomain: "cliente-mesa.firebaseapp.com",
+        projectId: "cliente-mesa",
+        storageBucket: "cliente-mesa.firebasestorage.app",
+        messagingSenderId: "1026287310268",
+        appId: "1:1026287310268:web:6557abdd6eb37b861fc7b9"
     };
 
-    mesas["mesa" + mesa].push({
-        itens: pedido,
-        total: total,
-        horario: new Date().toLocaleTimeString()
-    });
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-    localStorage.setItem("mesas", JSON.stringify(mesas));
+    let carrinho = [];
+    let valorTotal = 0;
 
-    // Limpa pedido do cliente
-    pedido = [];
-    total = 0;
-    atualizarLista();
+    // Função para atualizar a interface do carrinho
+    function atualizarInterface() {
+        const listaElement = document.getElementById("lista");
+        listaElement.innerHTML = "";
 
-    alert("✅ Pedido enviado com sucesso!");
-}
+        carrinho.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "item-carrinho";
+            div.innerHTML = `<span>${item.nome}</span><span>R$ ${item.preco.toFixed(2)}</span>`;
+            listaElement.appendChild(div);
+        });
+
+        document.getElementById("total").textContent = valorTotal.toFixed(2);
+    }
+
+    // Tornar funções globais para o 'onclick' do HTML
+    window.addPedido = function(nome, preco) {
+        carrinho.push({ nome, preco });
+        valorTotal += preco;
+        atualizarInterface();
+    };
+
+    window.enviarPedido = async function () {
+        const mesaSelecionada = document.getElementById("mesa").value;
+
+        if (!mesaSelecionada) {
+            alert("⚠️ Por favor, selecione uma mesa!");
+            return;
+        }
+
+        if (carrinho.length === 0) {
+            alert("🛒 Seu carrinho está vazio!");
+            return;
+        }
+
+        try {
+            // Loop para salvar cada item na subcoleção conforme sua estrutura confirmada
+            // Caminho: pedidos -> mesaX -> itens
+            for (const item of carrinho) {
+                await addDoc(collection(db, "pedidos", "mesa" + mesaSelecionada, "itens"), {
+                    nome: item.nome,
+                    preco: item.preco,
+                    status: "novo",
+                    criadoEm: serverTimestamp()
+                });
+            }
+
+            // Limpa o carrinho após o sucesso
+            carrinho = [];
+            valorTotal = 0;
+            atualizarInterface();
+            document.getElementById("mesa").value = "";
+            alert("🚀 Pedido enviado com sucesso para a cozinha!");
+
+        } catch (error) {
+            console.error("Erro ao enviar pedido:", error);
+            alert("❌ Erro ao enviar. Tente novamente.");
+        }
+    };
 </script>
-
-
 
 </body>
 </html>
