@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrando no cardápio...</title>
+</head>
+<body>
+
+<script>
+  // autoriza a sessão
+  sessionStorage.setItem("cardapio_ok", "true");
+
+  // marca o horário de acesso
+  sessionStorage.setItem("cardapio_inicio", Date.now());
+
+  // redireciona para o cardápio REAL
+  window.location.href = "cardapio.html";
+</script>
+
+</body>
+</html>
