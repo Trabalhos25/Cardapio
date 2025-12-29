@@ -129,6 +129,30 @@
 </header>
 
 <div class="container">
+<script>
+  const autorizado = sessionStorage.getItem("cardapio_ok");
+  const inicio = sessionStorage.getItem("cardapio_inicio");
+
+  const TEMPO_MAX = 30 * 60 * 1000; // 30 minutos
+  const agora = Date.now();
+
+  // acesso direto (sem QR)
+  if (!autorizado || !inicio) {
+    document.body.innerHTML = `
+      <h2>❌ Acesso encerrado</h2>
+      <p>Escaneie o QR Code novamente.</p>
+    `;
+  }
+
+  // sessão expirada
+  if (agora - inicio > TEMPO_MAX) {
+    sessionStorage.clear();
+    document.body.innerHTML = `
+      <h2>⏱️ Sessão expirada</h2>
+      <p>Escaneie o QR Code novamente.</p>
+    `;
+  }
+</script>
 
     <div class="card">
         <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Hambúrguer">
@@ -264,3 +288,4 @@
 
 </body>
 </html>
+
