@@ -129,22 +129,23 @@
 </header>
 
 <div class="container">
+
 <script>
+ 
   const autorizado = sessionStorage.getItem("cardapio_ok");
   const inicio = sessionStorage.getItem("cardapio_inicio");
+  const mesaSessao = sessionStorage.getItem("mesa");
 
-  const TEMPO_MAX = 30 * 60 * 1000; // 30 minutos
+  const TEMPO_MAX = 30 * 60 * 1000;
   const agora = Date.now();
 
-  // acesso direto (sem QR)
-  if (!autorizado || !inicio) {
+  if (!autorizado || !inicio || !mesaSessao) {
     document.body.innerHTML = `
       <h2>❌ Acesso encerrado</h2>
       <p>Escaneie o QR Code novamente.</p>
     `;
   }
 
-  // sessão expirada
   if (agora - inicio > TEMPO_MAX) {
     sessionStorage.clear();
     document.body.innerHTML = `
@@ -153,6 +154,8 @@
     `;
   }
 </script>
+
+
 
     <div class="card">
         <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Hambúrguer">
@@ -194,13 +197,7 @@
         </div>
     </div>
 
-    <h3>Escolha sua Mesa</h3>
-    <select id="mesa">
-        <option value="">-- Selecione --</option>
-        <option value="1">Mesa 1</option>
-        <option value="2">Mesa 2</option>
-        <option value="3">Mesa 3</option>
-    </select>
+    
 
     <button class="btn-enviar" onclick="enviarPedido()">📤 ENVIAR PEDIDO</button>
 
@@ -248,12 +245,13 @@
     };
 
     window.enviarPedido = async function () {
-        const mesaSelecionada = document.getElementById("mesa").value;
+        const mesaSelecionada = sessionStorage.getItem("mesa");
 
         if (!mesaSelecionada) {
-            alert("⚠️ Por favor, selecione uma mesa!");
-            return;
-        }
+  alert("❌ Mesa não identificada. Escaneie o QR Code novamente.");
+  return;
+}
+
 
         if (carrinho.length === 0) {
             alert("🛒 Seu carrinho está vazio!");
@@ -276,7 +274,7 @@
             carrinho = [];
             valorTotal = 0;
             atualizarInterface();
-            document.getElementById("mesa").value = "";
+            // Tirei document.getElementById("mesa").value = "";
             alert("🚀 Pedido enviado com sucesso para a cozinha!");
 
         } catch (error) {
@@ -288,4 +286,3 @@
 
 </body>
 </html>
-
