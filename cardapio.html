@@ -146,13 +146,17 @@
     `;
   }
 
-  if (agora - inicio > TEMPO_MAX) {
+ if (agora - inicio > TEMPO_MAX) {
     sessionStorage.clear();
     document.body.innerHTML = `
-      <h2>⏱️ Sessão expirada</h2>
-      <p>Escaneie o QR Code novamente.</p>
+      <div style="text-align:center; margin-top:50px;">
+        <h2>⏱️ Sessão expirada</h2>
+        <p>Por segurança, sua sessão de 2 minutos expirou.</p>
+        <p>Escaneie o QR Code da mesa novamente.</p>
+      </div>
     `;
-  }
+    window.stop(); // Para o carregamento do restante da página
+}
 </script>
 
 
