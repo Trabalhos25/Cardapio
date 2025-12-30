@@ -136,7 +136,7 @@
   const inicio = sessionStorage.getItem("cardapio_inicio");
   const mesaSessao = sessionStorage.getItem("mesa");
 
-  const TEMPO_MAX = 30 * 60 * 1000;
+  const TEMPO_MAX = 2 * 60 * 1000;
   const agora = Date.now();
 
   if (!autorizado || !inicio || !mesaSessao) {
@@ -290,3 +290,4 @@
 
 </body>
 </html>
+
