@@ -7,14 +7,19 @@
 <body>
 
 <script>
-  // autoriza a sessão
-  sessionStorage.setItem("cardapio_ok", "true");
+  const mesa = new URLSearchParams(window.location.search).get("mesa");
 
-  // marca o horário de acesso
-  sessionStorage.setItem("cardapio_inicio", Date.now());
+if (!mesa) {
+  alert("Mesa inválida");
+  window.location.href = "index.html";
+}
 
-  // redireciona para o cardápio REAL
-  window.location.href = "cardapio.html";
+sessionStorage.setItem("mesa", mesa);
+sessionStorage.setItem("cardapio_ok", "true");
+sessionStorage.setItem("cardapio_inicio", Date.now());
+
+window.location.href = "cardapio.html";
+
 </script>
 
 </body>
